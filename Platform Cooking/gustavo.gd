@@ -3,6 +3,17 @@ extends CharacterBody2D
 @onready var anim = $GusAnim
 @onready var gusSprites = $AnimatedSprite2D
 
+@onready var eAnim = $e
+
+
+var hasTom = false
+var hasCheese = false
+var hasDough = false
+var hasPep = false
+
+var hasShred = false
+var hasSause = false
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -11,6 +22,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
+	eAnim.play("e")
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://s0r8oer47j70"]
+[gd_scene load_steps=38 format=3 uid="uid://s0r8oer47j70"]
 
 [ext_resource type="Script" path="res://game_area.gd" id="1_byvhs"]
 [ext_resource type="Theme" uid="uid://dj1oj2tmlsr64" path="res://Themes/pizzaButton.tres" id="2_1e1ju"]
@@ -6,7 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bw0ais6qhwiar" path="res://Art/UI/foodUI/Sprite-uiNothing.png" id="3_2exo4"]
 [ext_resource type="Texture2D" uid="uid://bmhk5yfbg0vo3" path="res://Art/UI/foodUI/Sprite-uiTomato.png" id="4_m50a3"]
 [ext_resource type="Texture2D" uid="uid://d3xms6dgmfe3h" path="res://Art/UI/foodUI/Sprite-uiCheese.png" id="4_rl0f5"]
-[ext_resource type="PackedScene" uid="uid://dkt4xfj26ay1a" path="res://gustavo.tscn" id="7_t8h4p"]
+[ext_resource type="Texture2D" uid="uid://bclsg56tfrg2g" path="res://Art/UI/foodUI/Sprite-uiDough.png" id="5_sfasx"]
+[ext_resource type="Script" path="res://gustavo.gd" id="7_6hdu4"]
+[ext_resource type="Texture2D" uid="uid://djdqns5nn8rtr" path="res://Art/Pizza_Gus/Pizza Gus Neutral.png" id="8_o7skl"]
+[ext_resource type="Texture2D" uid="uid://8b28eakwk11r" path="res://Art/Pizza_Gus/Pizza Gus Left Run.png" id="9_6vp13"]
+[ext_resource type="Texture2D" uid="uid://7c2n5rset5s4" path="res://Art/UI/Sprite-ePress.png" id="10_jndg0"]
 
 [sub_resource type="Animation" id="Animation_dkfqj"]
 length = 0.001
@@ -117,7 +121,10 @@ animations = [{
 "name": &"cheese",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_sfasx")
+}],
 "loop": true,
 "name": &"dough",
 "speed": 5.0
@@ -143,6 +150,179 @@ animations = [{
 size = Vector2(1024, 45)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1xtm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gh64l"]
+radius = 7.0
+height = 26.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4366s"]
+atlas = ExtResource("9_6vp13")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ifsk"]
+atlas = ExtResource("9_6vp13")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1yk1"]
+atlas = ExtResource("9_6vp13")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjpmv"]
+atlas = ExtResource("9_6vp13")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lp8qt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_o7skl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4366s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ifsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1yk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjpmv")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_iu00m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ee5uj"]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ab02j"]
+resource_name = "run"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tta15"]
+_data = {
+"RESET": SubResource("Animation_iu00m"),
+"idle": SubResource("Animation_ee5uj"),
+"run": SubResource("Animation_ab02j")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kh48"]
+atlas = ExtResource("10_jndg0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtd5s"]
+atlas = ExtResource("10_jndg0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ukam8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kh48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtd5s")
+}],
+"loop": true,
+"name": &"e",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1lol"]
+size = Vector2(138, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hs3ey"]
+size = Vector2(101, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sonp0"]
+size = Vector2(101, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnama"]
+size = Vector2(66, 82)
 
 [node name="gameArea" type="Node2D"]
 script = ExtResource("1_byvhs")
@@ -250,8 +430,65 @@ offset_right = 1088.0
 offset_bottom = 464.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_v1xtm")
 
-[node name="Gus" parent="." instance=ExtResource("7_t8h4p")]
+[node name="Gus" type="CharacterBody2D" parent="."]
 position = Vector2(568, 328)
 scale = Vector2(5, 5)
+script = ExtResource("7_6hdu4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gus"]
+position = Vector2(3, 2)
+shape = SubResource("CapsuleShape2D_gh64l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gus"]
+sprite_frames = SubResource("SpriteFrames_lp8qt")
+animation = &"run"
+metadata/_edit_lock_ = true
+
+[node name="GusAnim" type="AnimationPlayer" parent="Gus"]
+libraries = {
+"": SubResource("AnimationLibrary_tta15")
+}
+
+[node name="e" type="AnimatedSprite2D" parent="Gus"]
+visible = false
+position = Vector2(4, -26)
+sprite_frames = SubResource("SpriteFrames_ukam8")
+animation = &"e"
+
+[node name="kitchenArea" type="Node2D" parent="."]
+
+[node name="oven" type="Area2D" parent="kitchenArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kitchenArea/oven"]
+position = Vector2(360, 368)
+shape = SubResource("RectangleShape2D_d1lol")
+
+[node name="assembleTable" type="Area2D" parent="kitchenArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kitchenArea/assembleTable"]
+position = Vector2(773.5, 373)
+shape = SubResource("RectangleShape2D_hs3ey")
+
+[node name="garbage" type="Area2D" parent="kitchenArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kitchenArea/garbage"]
+position = Vector2(96, 376)
+shape = SubResource("RectangleShape2D_sonp0")
+
+[node name="ingrediantsStations" type="Node2D" parent="."]
+
+[node name="doughStation" type="Area2D" parent="ingrediantsStations"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ingrediantsStations/doughStation"]
+position = Vector2(1040, 384)
+shape = SubResource("RectangleShape2D_mnama")
 
 [connection signal="pressed" from="UI/startWork" to="." method="_on_start_work_pressed"]
+[connection signal="body_entered" from="kitchenArea/oven" to="." method="_on_oven_body_entered"]
+[connection signal="body_exited" from="kitchenArea/oven" to="." method="_on_oven_body_exited"]
+[connection signal="body_entered" from="kitchenArea/assembleTable" to="." method="_on_assemble_table_body_entered"]
+[connection signal="body_exited" from="kitchenArea/assembleTable" to="." method="_on_assemble_table_body_exited"]
+[connection signal="body_entered" from="kitchenArea/garbage" to="." method="_on_garbage_body_entered"]
+[connection signal="body_exited" from="kitchenArea/garbage" to="." method="_on_garbage_body_exited"]
+[connection signal="body_entered" from="ingrediantsStations/doughStation" to="." method="_on_dough_station_body_entered"]
+[connection signal="body_exited" from="ingrediantsStations/doughStation" to="." method="_on_dough_station_body_exited"]
