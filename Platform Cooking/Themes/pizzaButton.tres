@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dj1oj2tmlsr64"]
+
+[ext_resource type="Texture2D" uid="uid://1r8p84tlrlpv" path="res://Art/UI/Sprite-pizzaButton.png" id="1_wvcer"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2mri0"]
+region_rect = Rect2(64, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_karcr"]
+texture = ExtResource("1_wvcer")
+region_rect = Rect2(32, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e3waf"]
+texture = ExtResource("1_wvcer")
+region_rect = Rect2(0, 0, 32, 32)
+modulate_color = Color(0.564706, 0.564706, 0.564706, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dnobj"]
+texture = ExtResource("1_wvcer")
+region_rect = Rect2(96, 0, 32, 32)
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = SubResource("StyleBoxTexture_2mri0")
+Button/styles/hover = SubResource("StyleBoxTexture_karcr")
+Button/styles/normal = SubResource("StyleBoxTexture_e3waf")
+Button/styles/pressed = SubResource("StyleBoxTexture_dnobj")
