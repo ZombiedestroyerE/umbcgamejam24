@@ -38,3 +38,11 @@ func _show_chatter():
 	if 1 < 33 and start:
 		drawTextSpeed += 1
 		dialogBox.visible_characters = drawTextSpeed
+
+
+func _on_start_work_pressed():
+	bgCharBox.visible = false
+	bgTextBox.visible = false
+	sratButton.visible = false
+	dialogBox.visible = false
+	nameChar.visible = false
