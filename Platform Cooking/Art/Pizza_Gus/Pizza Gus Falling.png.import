@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://d0sb0ef1p11l4"
+=======
+uid="uid://2pv0n3tm3pg5"
+>>>>>>> df1e3f1ce864414c92a180ff141a88f5fc34c5ff
 path="res://.godot/imported/Pizza Gus Falling.png-d728837c49f7485f1481e38d9bffc65b.ctex"
 metadata={
 "vram_texture": false
