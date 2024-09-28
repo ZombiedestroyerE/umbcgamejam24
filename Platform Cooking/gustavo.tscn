@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://dkt4xfj26ay1a"]
 
 [ext_resource type="Script" path="res://gustavo.gd" id="1_y2cle"]
-[ext_resource type="Texture2D" uid="uid://wdlu2fw6jl0a" path="res://Art/Pizza_Gus/Pizza Gus Neutral.png" id="2_5enu5"]
-[ext_resource type="Texture2D" uid="uid://dac6y4yb18ver" path="res://Art/Pizza_Gus/Pizza Gus Left Run.png" id="3_5ri6m"]
+[ext_resource type="Texture2D" uid="uid://djdqns5nn8rtr" path="res://Art/Pizza_Gus/Pizza Gus Neutral.png" id="2_5enu5"]
+[ext_resource type="Texture2D" uid="uid://8b28eakwk11r" path="res://Art/Pizza_Gus/Pizza Gus Left Run.png" id="3_5ri6m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gh64l"]
 radius = 7.0
@@ -81,6 +81,31 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ee5uj"]
 resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_ab02j"]
 resource_name = "run"

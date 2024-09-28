@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var anim = $GusAnim
+@onready var gusSprites = $AnimatedSprite2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -21,11 +22,18 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
+	if direction == -1:
+		gusSprites.flip_h = true
+	elif direction == 1:
+		gusSprites.flip_h = false
+	
 	if direction:
 		velocity.x = direction * SPEED
-		if velocity == 0:
-			
+		if velocity.y == 0:
+			anim.play("run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if velocity.y == 0:
+			anim.play("idle")
 
 	move_and_slide()
