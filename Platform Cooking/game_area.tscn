@@ -455,6 +455,8 @@ position = Vector2(4, -26)
 sprite_frames = SubResource("SpriteFrames_ukam8")
 animation = &"e"
 
+[node name="Camera2D" type="Camera2D" parent="Gus"]
+
 [node name="kitchenArea" type="Node2D" parent="."]
 
 [node name="oven" type="Area2D" parent="kitchenArea"]
