@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://crbvywnx0yo3g"]
+[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://crbvywnx0yo3g"]
 
 [ext_resource type="Texture2D" uid="uid://0527u6il527o" path="res://Art/Tiles/Grass Platform1.png" id="1_ql50s"]
 [ext_resource type="Texture2D" uid="uid://csc4i45xju0p5" path="res://Art/Tiles/Grass Platform2.png" id="2_7oihr"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dr26cvmcvflxn" path="res://Art/Tiles/Dirt Wall.png" id="5_h1pg5"]
 [ext_resource type="Texture2D" uid="uid://ba7t8lh1fl4jp" path="res://Art/Tiles/Girder.png" id="6_31qtw"]
 [ext_resource type="Texture2D" uid="uid://c557wrru5pbck" path="res://Art/Tiles/Tomato Sauce Pot.png" id="7_r30xg"]
-[ext_resource type="Texture2D" uid="uid://b8ebrers7jxs3" path="res://Art/Tiles/Spike.png" id="8_fxxtc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5m5rx"]
 texture = ExtResource("1_ql50s")
@@ -83,7 +82,6 @@ texture = ExtResource("7_r30xg")
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykiyh"]
-texture = ExtResource("8_fxxtc")
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, -2)
 1:1/0 = 0
