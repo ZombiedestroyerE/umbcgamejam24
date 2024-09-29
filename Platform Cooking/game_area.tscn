@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://s0r8oer47j70"]
+[gd_scene load_steps=53 format=3 uid="uid://s0r8oer47j70"]
 
 [ext_resource type="Script" path="res://game_area.gd" id="1_byvhs"]
 [ext_resource type="Theme" uid="uid://dj1oj2tmlsr64" path="res://Themes/pizzaButton.tres" id="2_1e1ju"]
@@ -16,147 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://mhm2kh5y3ngc" path="res://Art/Pizza_Gus/Pizza Gus Jumping.png" id="12_8lxbx"]
 [ext_resource type="Texture2D" uid="uid://permciojhq83" path="res://Art/Enemys/Spike.png" id="13_byhpv"]
 [ext_resource type="PackedScene" uid="uid://d0ai6tvfdxkfx" path="res://tomato_section.tscn" id="14_tklev"]
-[ext_resource type="PackedScene" uid="uid://cn5tmpps78b6q" path="res://main_area.tscn" id="17_0a4wr"]
 [ext_resource type="PackedScene" uid="uid://bnr6xnd6ujork" path="res://pepperoni_section.tscn" id="18_nxdom"]
-
-[sub_resource type="Animation" id="Animation_dkfqj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(552, 360)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Panel:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(48, 48)]
-}
-
-[sub_resource type="Animation" id="Animation_jum20"]
-resource_name = "fadeIn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Panel:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1184, 672), Vector2(856, 672), Vector2(768, 576), Vector2(616, 424), Vector2(448, 256), Vector2(256, 224), Vector2(64, 64), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Panel:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-16, -8), Vector2(144, -8), Vector2(192, 64), Vector2(272, 144), Vector2(352, 224), Vector2(448, 224), Vector2(544, 288), Vector2(576, 328)]
-}
-
-[sub_resource type="Animation" id="Animation_5w3vm"]
-resource_name = "fadeOut"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(552, 360), Vector2(472, 280), Vector2(392, 200), Vector2(312, 120), Vector2(200, 40), Vector2(144, -8), Vector2(-16, -8)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Panel:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(48, 48), Vector2(208, 208), Vector2(368, 368), Vector2(528, 528), Vector2(720, 624), Vector2(856, 672), Vector2(1184, 672)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mjbcx"]
-_data = {
-"RESET": SubResource("Animation_dkfqj"),
-"fadeIn": SubResource("Animation_jum20"),
-"fadeOut": SubResource("Animation_5w3vm")
-}
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq6mn"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylhtt"]
-bg_color = Color(0.913725, 0.521569, 0.215686, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.952941, 0.658824, 0.2, 1)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_08y6k"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_rl0f5")
-}],
-"loop": true,
-"name": &"cheese",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_sfasx")
-}],
-"loop": true,
-"name": &"dough",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_2exo4")
-}],
-"loop": true,
-"name": &"none",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_m50a3")
-}],
-"loop": true,
-"name": &"tomato",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dey70"]
-size = Vector2(1024, 45)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1xtm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gh64l"]
 radius = 7.0
@@ -413,6 +273,145 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_dkfqj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(552, 360)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Panel:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_jum20"]
+resource_name = "fadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1184, 672), Vector2(856, 672), Vector2(768, 576), Vector2(616, 424), Vector2(448, 256), Vector2(256, 224), Vector2(64, 64), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-16, -8), Vector2(144, -8), Vector2(192, 64), Vector2(272, 144), Vector2(352, 224), Vector2(448, 224), Vector2(544, 288), Vector2(576, 328)]
+}
+
+[sub_resource type="Animation" id="Animation_5w3vm"]
+resource_name = "fadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(552, 360), Vector2(472, 280), Vector2(392, 200), Vector2(312, 120), Vector2(200, 40), Vector2(144, -8), Vector2(-16, -8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Panel:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(48, 48), Vector2(208, 208), Vector2(368, 368), Vector2(528, 528), Vector2(720, 624), Vector2(856, 672), Vector2(1184, 672)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mjbcx"]
+_data = {
+"RESET": SubResource("Animation_dkfqj"),
+"fadeIn": SubResource("Animation_jum20"),
+"fadeOut": SubResource("Animation_5w3vm")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq6mn"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylhtt"]
+bg_color = Color(0.913725, 0.521569, 0.215686, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.952941, 0.658824, 0.2, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08y6k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rl0f5")
+}],
+"loop": true,
+"name": &"cheese",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_sfasx")
+}],
+"loop": true,
+"name": &"dough",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2exo4")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_m50a3")
+}],
+"loop": true,
+"name": &"tomato",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dey70"]
+size = Vector2(1024, 45)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1xtm"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1lol"]
 size = Vector2(138, 106)
 
@@ -450,6 +449,34 @@ size = Vector2(19.7391, 14.1481)
 script = ExtResource("1_byvhs")
 metadata/_edit_vertical_guides_ = [0.0, 1152.0]
 metadata/_edit_horizontal_guides_ = [0.0, 648.0]
+
+[node name="Gus" type="CharacterBody2D" parent="."]
+position = Vector2(568, 328)
+scale = Vector2(5, 5)
+script = ExtResource("7_6hdu4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gus"]
+position = Vector2(3, 2)
+shape = SubResource("CapsuleShape2D_gh64l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gus"]
+sprite_frames = SubResource("SpriteFrames_lp8qt")
+animation = &"run"
+metadata/_edit_lock_ = true
+
+[node name="GusAnim" type="AnimationPlayer" parent="Gus"]
+libraries = {
+"": SubResource("AnimationLibrary_tta15")
+}
+
+[node name="e" type="AnimatedSprite2D" parent="Gus"]
+visible = false
+position = Vector2(4, -26)
+sprite_frames = SubResource("SpriteFrames_ukam8")
+animation = &"e"
+
+[node name="Camera2D" type="Camera2D" parent="Gus"]
+zoom = Vector2(0.5, 0.5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -558,34 +585,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_v1xtm")
 position = Vector2(-1177, 1405)
 scale = Vector2(10, 10)
 
-[node name="Gus" type="CharacterBody2D" parent="."]
-position = Vector2(568, 328)
-scale = Vector2(5, 5)
-script = ExtResource("7_6hdu4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gus"]
-position = Vector2(3, 2)
-shape = SubResource("CapsuleShape2D_gh64l")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gus"]
-sprite_frames = SubResource("SpriteFrames_lp8qt")
-animation = &"run"
-metadata/_edit_lock_ = true
-
-[node name="GusAnim" type="AnimationPlayer" parent="Gus"]
-libraries = {
-"": SubResource("AnimationLibrary_tta15")
-}
-
-[node name="e" type="AnimatedSprite2D" parent="Gus"]
-visible = false
-position = Vector2(4, -26)
-sprite_frames = SubResource("SpriteFrames_ukam8")
-animation = &"e"
-
-[node name="Camera2D" type="Camera2D" parent="Gus"]
-zoom = Vector2(0.5, 0.5)
-
 [node name="kitchenArea" type="Node2D" parent="."]
 
 [node name="oven" type="Area2D" parent="kitchenArea"]
@@ -633,10 +632,6 @@ shape = SubResource("RectangleShape2D_e2vep")
 
 [node name="tomato" parent="." instance=ExtResource("14_tklev")]
 position = Vector2(209, 20)
-scale = Vector2(10, 10)
-
-[node name="main area" parent="." instance=ExtResource("17_0a4wr")]
-position = Vector2(494, 421)
 scale = Vector2(10, 10)
 
 [node name="peprroni section" parent="." instance=ExtResource("18_nxdom")]
