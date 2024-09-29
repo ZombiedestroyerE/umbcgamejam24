@@ -2,14 +2,12 @@
 
 [ext_resource type="Script" path="res://game_area.gd" id="1_byvhs"]
 [ext_resource type="Theme" uid="uid://dj1oj2tmlsr64" path="res://Themes/pizzaButton.tres" id="2_1e1ju"]
-[ext_resource type="PackedScene" path="res://pepperoni_section.tscn" id="2_6g74g"]
 [ext_resource type="FontFile" uid="uid://cr1dfxxkuo2u5" path="res://Fonts/PixelifySans-VariableFont_wght.ttf" id="2_x8g3n"]
 [ext_resource type="Texture2D" uid="uid://bw0ais6qhwiar" path="res://Art/UI/foodUI/Sprite-uiNothing.png" id="3_2exo4"]
 [ext_resource type="Texture2D" uid="uid://bmhk5yfbg0vo3" path="res://Art/UI/foodUI/Sprite-uiTomato.png" id="4_m50a3"]
 [ext_resource type="Texture2D" uid="uid://d3xms6dgmfe3h" path="res://Art/UI/foodUI/Sprite-uiCheese.png" id="4_rl0f5"]
 [ext_resource type="Texture2D" uid="uid://bclsg56tfrg2g" path="res://Art/UI/foodUI/Sprite-uiDough.png" id="5_sfasx"]
 [ext_resource type="Script" path="res://gustavo.gd" id="7_6hdu4"]
-[ext_resource type="Texture2D" uid="uid://motokilp4vv1" path="res://Art/UI/foodUI/Sprite-uiSause.png" id="7_ygs6u"]
 [ext_resource type="PackedScene" uid="uid://dxc3q63qi3kvr" path="res://dough_section.tscn" id="8_ki18p"]
 [ext_resource type="Texture2D" uid="uid://djdqns5nn8rtr" path="res://Art/Pizza_Gus/Pizza Gus Neutral.png" id="8_o7skl"]
 [ext_resource type="Texture2D" uid="uid://8b28eakwk11r" path="res://Art/Pizza_Gus/Pizza Gus Left Run.png" id="9_6vp13"]
@@ -18,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://mhm2kh5y3ngc" path="res://Art/Pizza_Gus/Pizza Gus Jumping.png" id="12_8lxbx"]
 [ext_resource type="Texture2D" uid="uid://permciojhq83" path="res://Art/Enemys/Spike.png" id="13_byhpv"]
 [ext_resource type="PackedScene" uid="uid://d0ai6tvfdxkfx" path="res://tomato_section.tscn" id="14_tklev"]
+[ext_resource type="PackedScene" uid="uid://cn5tmpps78b6q" path="res://main_area.tscn" id="17_0a4wr"]
+[ext_resource type="PackedScene" uid="uid://bnr6xnd6ujork" path="res://pepperoni_section.tscn" id="18_nxdom"]
 
 [sub_resource type="Animation" id="Animation_dkfqj"]
 length = 0.001
@@ -142,14 +142,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"none",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_ygs6u")
-}],
-"loop": true,
-"name": &"sause",
 "speed": 5.0
 }, {
 "frames": [{
@@ -545,7 +537,7 @@ offset_bottom = 224.0
 position = Vector2(68, 64)
 scale = Vector2(4.25, 4)
 sprite_frames = SubResource("SpriteFrames_08y6k")
-animation = &"sause"
+animation = &"none"
 
 [node name="level" type="Node2D" parent="."]
 
@@ -615,10 +607,8 @@ position = Vector2(96, 376)
 shape = SubResource("RectangleShape2D_sonp0")
 
 [node name="ingrediantsStations" type="Node2D" parent="."]
-position = Vector2(3, -1)
 
 [node name="doughStation" type="Area2D" parent="ingrediantsStations"]
-position = Vector2(4, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ingrediantsStations/doughStation"]
 position = Vector2(1040, 384)
@@ -631,35 +621,26 @@ position = Vector2(-27399, 17564)
 shape = SubResource("RectangleShape2D_4aarg")
 
 [node name="Spike" type="AnimatedSprite2D" parent="."]
-position = Vector2(-966, -368)
+position = Vector2(-165, 530)
 scale = Vector2(4.3125, 3.375)
 sprite_frames = SubResource("SpriteFrames_tx3vu")
 
 [node name="killzone_spike" type="Area2D" parent="Spike"]
-position = Vector2(3.53827e-06, 0.888889)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike/killzone_spike"]
-position = Vector2(6.10352e-05, 10.0741)
-rotation = -3.14159
+position = Vector2(1.26087, 8.85185)
 shape = SubResource("RectangleShape2D_e2vep")
 
 [node name="tomato" parent="." instance=ExtResource("14_tklev")]
-position = Vector2(43, -128)
+position = Vector2(209, 20)
 scale = Vector2(10, 10)
 
-[node name="Spike2" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1459, -520)
-scale = Vector2(4.3125, 3.375)
-sprite_frames = SubResource("SpriteFrames_tx3vu")
+[node name="main area" parent="." instance=ExtResource("17_0a4wr")]
+position = Vector2(494, 421)
+scale = Vector2(10, 10)
 
-[node name="killzone_spike" type="Area2D" parent="Spike2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike2/killzone_spike"]
-position = Vector2(0.231888, 9.18519)
-shape = SubResource("RectangleShape2D_e2vep")
-
-[node name="pepperoni section" parent="." instance=ExtResource("2_6g74g")]
-position = Vector2(1276, 210)
+[node name="peprroni section" parent="." instance=ExtResource("18_nxdom")]
+position = Vector2(1713, 119)
 scale = Vector2(10, 10)
 
 [connection signal="pressed" from="UI/startWork" to="." method="_on_start_work_pressed"]
@@ -673,4 +654,3 @@ scale = Vector2(10, 10)
 [connection signal="body_exited" from="ingrediantsStations/doughStation" to="." method="_on_dough_station_body_exited"]
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
 [connection signal="body_entered" from="Spike/killzone_spike" to="." method="_on_killzone_spike_body_entered"]
-[connection signal="body_entered" from="Spike2/killzone_spike" to="." method="_on_killzone_spike_body_entered"]
