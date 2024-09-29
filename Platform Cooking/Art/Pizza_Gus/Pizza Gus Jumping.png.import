@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://mhm2kh5y3ngc"
+=======
+uid="uid://bmbecp1v540ff"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Pizza Gus Jumping.png-6539fd58bc56b8f502cef980b9ab5903.ctex"
 metadata={
 "vram_texture": false
