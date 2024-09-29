@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dkt4xfj26ay1a"]
+[gd_scene load_steps=18 format=3 uid="uid://dkt4xfj26ay1a"]
 
 [ext_resource type="Script" path="res://gustavo.gd" id="1_y2cle"]
 [ext_resource type="Texture2D" uid="uid://djdqns5nn8rtr" path="res://Art/Pizza_Gus/Pizza Gus Neutral.png" id="2_5enu5"]
 [ext_resource type="Texture2D" uid="uid://8b28eakwk11r" path="res://Art/Pizza_Gus/Pizza Gus Left Run.png" id="3_5ri6m"]
+[ext_resource type="Texture2D" uid="uid://7c2n5rset5s4" path="res://Art/UI/Sprite-ePress.png" id="4_tuvgp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gh64l"]
 radius = 7.0
@@ -143,6 +144,28 @@ _data = {
 "run": SubResource("Animation_ab02j")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kh48"]
+atlas = ExtResource("4_tuvgp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtd5s"]
+atlas = ExtResource("4_tuvgp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ukam8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kh48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtd5s")
+}],
+"loop": true,
+"name": &"e",
+"speed": 5.0
+}]
+
 [node name="Gus" type="CharacterBody2D"]
 script = ExtResource("1_y2cle")
 
@@ -159,3 +182,11 @@ metadata/_edit_lock_ = true
 libraries = {
 "": SubResource("AnimationLibrary_tta15")
 }
+
+[node name="e" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -26)
+sprite_frames = SubResource("SpriteFrames_ukam8")
+animation = &"e"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true

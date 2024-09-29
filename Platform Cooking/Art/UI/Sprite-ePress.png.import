@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckq43tcjsy7qn"
-path="res://.godot/imported/Pizza Gus Falling.png-d728837c49f7485f1481e38d9bffc65b.ctex"
+uid="uid://7c2n5rset5s4"
+path="res://.godot/imported/Sprite-ePress.png-6915d3474e17281964682a9a0d6ba94c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Pizza_Gus/Pizza Gus Falling.png"
-dest_files=["res://.godot/imported/Pizza Gus Falling.png-d728837c49f7485f1481e38d9bffc65b.ctex"]
+source_file="res://Art/UI/Sprite-ePress.png"
+dest_files=["res://.godot/imported/Sprite-ePress.png-6915d3474e17281964682a9a0d6ba94c.ctex"]
 
 [params]
 
