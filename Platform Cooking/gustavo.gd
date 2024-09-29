@@ -50,3 +50,7 @@ func _physics_process(delta):
 			anim.play("idle")
 
 	move_and_slide()
+
+
+func _on_killzone_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

@@ -325,6 +325,9 @@ size = Vector2(101, 90)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnama"]
 size = Vector2(66, 82)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4aarg"]
+size = Vector2(254464, 20424)
+
 [node name="gameArea" type="Node2D"]
 script = ExtResource("1_byvhs")
 metadata/_edit_vertical_guides_ = [0.0, 1152.0]
@@ -492,6 +495,12 @@ shape = SubResource("RectangleShape2D_sonp0")
 position = Vector2(1040, 384)
 shape = SubResource("RectangleShape2D_mnama")
 
+[node name="killzone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(-27399, 17564)
+shape = SubResource("RectangleShape2D_4aarg")
+
 [connection signal="pressed" from="UI/startWork" to="." method="_on_start_work_pressed"]
 [connection signal="body_entered" from="kitchenArea/oven" to="." method="_on_oven_body_entered"]
 [connection signal="body_exited" from="kitchenArea/oven" to="." method="_on_oven_body_exited"]
@@ -501,3 +510,4 @@ shape = SubResource("RectangleShape2D_mnama")
 [connection signal="body_exited" from="kitchenArea/garbage" to="." method="_on_garbage_body_exited"]
 [connection signal="body_entered" from="ingrediantsStations/doughStation" to="." method="_on_dough_station_body_entered"]
 [connection signal="body_exited" from="ingrediantsStations/doughStation" to="." method="_on_dough_station_body_exited"]
+[connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
