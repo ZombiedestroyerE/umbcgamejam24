@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://s0r8oer47j70"]
+[gd_scene load_steps=55 format=3 uid="uid://s0r8oer47j70"]
 
 [ext_resource type="Script" path="res://game_area.gd" id="1_byvhs"]
 [ext_resource type="Theme" uid="uid://dj1oj2tmlsr64" path="res://Themes/pizzaButton.tres" id="2_1e1ju"]
@@ -16,11 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://mhm2kh5y3ngc" path="res://Art/Pizza_Gus/Pizza Gus Jumping.png" id="12_8lxbx"]
 [ext_resource type="Texture2D" uid="uid://permciojhq83" path="res://Art/Enemys/Spike.png" id="13_byhpv"]
 [ext_resource type="PackedScene" uid="uid://d0ai6tvfdxkfx" path="res://tomato_section.tscn" id="14_tklev"]
-[ext_resource type="TileSet" uid="uid://crbvywnx0yo3g" path="res://Art/Tiles/Tileset.tres" id="18_d1fmr"]
 [ext_resource type="PackedScene" uid="uid://bnr6xnd6ujork" path="res://pepperoni_section.tscn" id="18_nxdom"]
-[ext_resource type="Texture2D" uid="uid://mqly0saccjrl" path="res://Art/Tiles/Cheese Chipper.png" id="19_fjkow"]
-[ext_resource type="Texture2D" uid="uid://c557wrru5pbck" path="res://Art/Tiles/Tomato Sauce Pot.png" id="20_nfs7m"]
-[ext_resource type="Texture2D" uid="uid://clxt55suaidph" path="res://Art/Tiles/Sprite-fireStove.png" id="21_uv3sm"]
+[ext_resource type="PackedScene" uid="uid://bgrt45vbnk3ub" path="res://cheese_section.tscn" id="18_qcl7b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gh64l"]
 radius = 7.0
@@ -447,7 +444,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2vep"]
-size = Vector2(19.7391, 14.1481)
+size = Vector2(19.7391, 15.6852)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n026t"]
+size = Vector2(2092, 351)
 
 [node name="gameArea" type="Node2D"]
 script = ExtResource("1_byvhs")
@@ -585,10 +585,6 @@ offset_right = 1088.0
 offset_bottom = 464.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_v1xtm")
 
-[node name="Dough Section" parent="level" instance=ExtResource("8_ki18p")]
-position = Vector2(-1177, 1405)
-scale = Vector2(10, 10)
-
 [node name="kitchenArea" type="Node2D" parent="."]
 
 [node name="oven" type="Area2D" parent="kitchenArea"]
@@ -620,51 +616,68 @@ shape = SubResource("RectangleShape2D_mnama")
 [node name="killzone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
-position = Vector2(-27399, 17564)
+position = Vector2(-27228, 14701)
 shape = SubResource("RectangleShape2D_4aarg")
 
 [node name="Spike" type="AnimatedSprite2D" parent="."]
-position = Vector2(-165, 530)
+position = Vector2(-806, -222)
 scale = Vector2(4.3125, 3.375)
 sprite_frames = SubResource("SpriteFrames_tx3vu")
 
 [node name="killzone_spike" type="Area2D" parent="Spike"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike/killzone_spike"]
-position = Vector2(1.26087, 8.85185)
+position = Vector2(-0.231876, 10.5093)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_e2vep")
+metadata/_edit_lock_ = true
 
 [node name="tomato" parent="." instance=ExtResource("14_tklev")]
-position = Vector2(209, 20)
+position = Vector2(208, 14)
 scale = Vector2(10, 10)
 
 [node name="peprroni section" parent="." instance=ExtResource("18_nxdom")]
 position = Vector2(1713, 119)
 scale = Vector2(10, 10)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(0, -36)
+[node name="cheese section" parent="." instance=ExtResource("18_qcl7b")]
+position = Vector2(1290, 956)
 scale = Vector2(10, 10)
-tile_map_data = PackedByteArray("AAA3ABAABQAAAAAAAAA3ABEABQAAAAEAAAA4ABAABQABAAAAAAA4ABEABQABAAEAAAAAAAIABQAAAAAAAAAAAAMABQAAAAEAAAABAAIABQABAAAAAAABAAMABQABAAEAAAACAAIABQAAAAAAAAACAAMABQAAAAEAAAADAAIABQABAAAAAAADAAMABQABAAEAAAAEAAIABQAAAAAAAAAEAAMABQAAAAEAAAAFAAIABQABAAAAAAAFAAMABQABAAEAAAAGAAIABQAAAAAAAAAGAAMABQAAAAEAAAA=")
-tile_set = ExtResource("18_d1fmr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(770, 351)
-scale = Vector2(5, 5)
-texture = ExtResource("19_fjkow")
+[node name="killzone2" type="Area2D" parent="."]
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(1036, 348)
-scale = Vector2(5, 5)
-texture = ExtResource("20_nfs7m")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone2"]
+position = Vector2(-20078, -13088)
+shape = SubResource("RectangleShape2D_4aarg")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(365, 364)
-scale = Vector2(5, 5)
-texture = ExtResource("21_uv3sm")
+[node name="Dough Section" parent="." instance=ExtResource("8_ki18p")]
+position = Vector2(-1285, 1643)
+scale = Vector2(10, 10)
+
+[node name="killzone_horizon" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone_horizon"]
+position = Vector2(-1250, 127.5)
+shape = SubResource("RectangleShape2D_n026t")
+
+[node name="Spike2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1285, -380)
+scale = Vector2(4.3125, 3.375)
+sprite_frames = SubResource("SpriteFrames_tx3vu")
+
+[node name="killzone_spike" type="Area2D" parent="Spike2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike2/killzone_spike"]
+position = Vector2(-0.231876, 10.5093)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_e2vep")
+metadata/_edit_lock_ = true
+
+[node name="killzone_horizon2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone_horizon2"]
+position = Vector2(2418, 352)
+shape = SubResource("RectangleShape2D_n026t")
 
 [connection signal="pressed" from="UI/startWork" to="." method="_on_start_work_pressed"]
 [connection signal="body_entered" from="kitchenArea/oven" to="." method="_on_oven_body_entered"]
@@ -677,3 +690,7 @@ texture = ExtResource("21_uv3sm")
 [connection signal="body_exited" from="ingrediantsStations/doughStation" to="." method="_on_dough_station_body_exited"]
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
 [connection signal="body_entered" from="Spike/killzone_spike" to="." method="_on_killzone_spike_body_entered"]
+[connection signal="body_entered" from="killzone2" to="." method="_on_killzone_body_entered"]
+[connection signal="body_entered" from="killzone_horizon" to="." method="_on_killzone_body_entered"]
+[connection signal="body_entered" from="Spike2/killzone_spike" to="." method="_on_killzone_spike_body_entered"]
+[connection signal="body_entered" from="killzone_horizon2" to="." method="_on_killzone_body_entered"]
