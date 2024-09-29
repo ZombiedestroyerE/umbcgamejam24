@@ -533,7 +533,7 @@ position = Vector2(1.26087, 8.85185)
 shape = SubResource("RectangleShape2D_e2vep")
 
 [node name="tomato" parent="." instance=ExtResource("14_tklev")]
-position = Vector2(72, 108)
+position = Vector2(209, 20)
 scale = Vector2(10, 10)
 
 [connection signal="pressed" from="UI/startWork" to="." method="_on_start_work_pressed"]
