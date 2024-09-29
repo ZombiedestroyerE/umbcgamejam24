@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://s0r8oer47j70"]
+[gd_scene load_steps=83 format=4 uid="uid://s0r8oer47j70"]
 
 [ext_resource type="Script" path="res://game_area.gd" id="1_byvhs"]
 [ext_resource type="Theme" uid="uid://dj1oj2tmlsr64" path="res://Themes/pizzaButton.tres" id="2_1e1ju"]
@@ -21,7 +21,11 @@
 [ext_resource type="Texture2D" uid="uid://dsccfbp5wky0m" path="res://Art/Tiles/Sprite-cheesePile.png" id="16_bx5de"]
 [ext_resource type="Texture2D" uid="uid://d1b3smrkoh8wd" path="res://Art/Tiles/Sprite-pepperoniPile.png" id="17_uscwj"]
 [ext_resource type="PackedScene" uid="uid://bnr6xnd6ujork" path="res://pepperoni_section.tscn" id="18_nxdom"]
-[ext_resource type="PackedScene" uid="uid://bgrt45vbnk3ub" path="res://cheese_section.tscn" id="18_qcl7b"]
+[ext_resource type="PackedScene" path="res://cheese_section.tscn" id="18_qcl7b"]
+[ext_resource type="TileSet" uid="uid://crbvywnx0yo3g" path="res://Art/Tiles/Tileset.tres" id="23_7tm1b"]
+[ext_resource type="Texture2D" uid="uid://clxt55suaidph" path="res://Art/Tiles/Sprite-fireStove.png" id="24_yvw1c"]
+[ext_resource type="Texture2D" uid="uid://mqly0saccjrl" path="res://Art/Tiles/Cheese Chipper.png" id="25_34ju4"]
+[ext_resource type="Texture2D" uid="uid://c557wrru5pbck" path="res://Art/Tiles/Tomato Sauce Pot.png" id="26_63qpk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gh64l"]
 radius = 7.0
@@ -413,7 +417,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dey70"]
-size = Vector2(1024, 45)
+size = Vector2(1047, 45)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1xtm"]
 
@@ -557,7 +561,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_xjy86")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -595,7 +599,7 @@ animations = [{
 size = Vector2(19.7391, 15.6852)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n026t"]
-size = Vector2(1761, 208.5)
+size = Vector2(2104, 208.5)
 
 [node name="gameArea" type="Node2D"]
 script = ExtResource("1_byvhs")
@@ -723,10 +727,11 @@ animation = &"none"
 [node name="StaticBody2D" type="StaticBody2D" parent="level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/StaticBody2D"]
-position = Vector2(576, 449.5)
+position = Vector2(575.5, 449.5)
 shape = SubResource("RectangleShape2D_dey70")
 
 [node name="Panel" type="Panel" parent="level"]
+visible = false
 offset_left = 64.0
 offset_top = 424.0
 offset_right = 1088.0
@@ -755,7 +760,6 @@ animation = &"idle"
 position = Vector2(3208, 4184)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_3311m")
-animation = &"idle"
 
 [node name="kitchenArea" type="Node2D" parent="."]
 
@@ -830,7 +834,7 @@ metadata/_edit_lock_ = true
 [node name="killzone_horizon" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone_horizon"]
-position = Vector2(-2018, 407)
+position = Vector2(-1244, 23.75)
 shape = SubResource("RectangleShape2D_n026t")
 
 [node name="Spike2" type="AnimatedSprite2D" parent="."]
@@ -848,8 +852,33 @@ metadata/_edit_lock_ = true
 [node name="killzone_horizon2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone_horizon2"]
-position = Vector2(2631, 155)
+position = Vector2(2418, 352)
 shape = SubResource("RectangleShape2D_n026t")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 1
+position = Vector2(-22, -45)
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAABAAUABQABAAAAAAABAAYABQABAAEAAAACAAUABQAAAAAAAAACAAYABQAAAAEAAAADAAUABQABAAAAAAADAAYABQABAAEAAAAEAAUABQAAAAAAAAAEAAYABQAAAAEAAAAFAAUABQABAAAAAAAFAAYABQABAAEAAAAGAAUABQAAAAAAAAAGAAYABQAAAAEAAAAHAAUABQABAAAAAAAHAAYABQABAAEAAAAIAAUABQAAAAAAAAAIAAYABQAAAAEAAAAJAAUABQABAAAAAAAJAAYABQABAAEAAAAKAAUABQAAAAAAAAAKAAYABQAAAAEAAAALAAUABQABAAAAAAALAAYABQABAAEAAAAMAAUABQAAAAAAAAAMAAYABQAAAAEAAAANAAUABQABAAAAAAANAAYABQABAAEAAAA=")
+tile_set = ExtResource("23_7tm1b")
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMapLayer"]
+z_index = -1
+position = Vector2(76, 82)
+texture = ExtResource("24_yvw1c")
+
+[node name="Sprite2D2" type="Sprite2D" parent="TileMapLayer"]
+z_index = -1
+position = Vector2(159.4, 78.6)
+texture = ExtResource("25_34ju4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(209.8, 78.6)
+scale = Vector2(1, 1)
+texture = ExtResource("26_63qpk")
+
+[node name="Sprite2D4" type="Sprite2D" parent="TileMapLayer"]
+scale = Vector2(1, 1)
 
 [connection signal="pressed" from="UI/startWork" to="." method="_on_start_work_pressed"]
 [connection signal="body_entered" from="kitchenArea/oven" to="." method="_on_oven_body_entered"]
