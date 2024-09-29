@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://s0r8oer47j70"]
+[gd_scene load_steps=40 format=3 uid="uid://s0r8oer47j70"]
 
 [ext_resource type="Script" path="res://game_area.gd" id="1_byvhs"]
 [ext_resource type="Theme" uid="uid://dj1oj2tmlsr64" path="res://Themes/pizzaButton.tres" id="2_1e1ju"]
@@ -437,7 +437,7 @@ offset_bottom = 464.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_v1xtm")
 
 [node name="Dough Section" parent="level" instance=ExtResource("8_ki18p")]
-position = Vector2(-1579, 1659)
+position = Vector2(-1177, 1405)
 scale = Vector2(10, 10)
 
 [node name="Gus" type="CharacterBody2D" parent="."]

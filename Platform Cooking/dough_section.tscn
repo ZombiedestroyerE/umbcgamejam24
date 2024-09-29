@@ -1,55 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://dxc3q63qi3kvr"]
+[gd_scene load_steps=2 format=4 uid="uid://dxc3q63qi3kvr"]
 
-[ext_resource type="Texture2D" uid="uid://0527u6il527o" path="res://Art/Tiles/Grass Platform1.png" id="1_3mgx0"]
-[ext_resource type="Texture2D" uid="uid://csc4i45xju0p5" path="res://Art/Tiles/Grass Platform2.png" id="2_0lh5h"]
-[ext_resource type="Texture2D" uid="uid://7x8hesd6ewvm" path="res://Art/Tiles/Grass Platform3.png" id="3_fy4to"]
-[ext_resource type="Texture2D" uid="uid://c7b7j1s7ch7qf" path="res://Art/Tiles/Grass Platform4.png" id="4_efpku"]
-[ext_resource type="Texture2D" uid="uid://dr26cvmcvflxn" path="res://Art/Tiles/Dirt Wall.png" id="5_pgi0w"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5m5rx"]
-texture = ExtResource("1_3mgx0")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mk1m6"]
-texture = ExtResource("2_0lh5h")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebodi"]
-texture = ExtResource("3_fy4to")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sejwo"]
-texture = ExtResource("4_efpku")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xkpf"]
-texture = ExtResource("5_pgi0w")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_nsi7s"]
-sources/0 = SubResource("TileSetAtlasSource_5m5rx")
-sources/1 = SubResource("TileSetAtlasSource_mk1m6")
-sources/2 = SubResource("TileSetAtlasSource_ebodi")
-sources/3 = SubResource("TileSetAtlasSource_sejwo")
-sources/4 = SubResource("TileSetAtlasSource_3xkpf")
+[ext_resource type="TileSet" uid="uid://dn6jb2wvfpn0s" path="res://Art/Tiles/dough_section.tres" id="1_4vc37"]
 
 [node name="Dough Section" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD///n/BAAAAAAAAAD///r/BAAAAAEAAAAAAPn/BAABAAAAAAAAAPr/BAABAAEAAAD///v/BAAAAAAAAAD///z/BAAAAAEAAAAAAPv/BAABAAAAAAAAAPz/BAABAAEAAAD///3/BAAAAAAAAAD///7/BAAAAAEAAAAAAP3/BAABAAAAAAAAAP7/BAABAAEAAAD/////BAAAAAAAAAD//wAABAAAAAEAAAAAAP//BAABAAAAAAAAAAAABAABAAEAAAD//wEABAAAAAAAAAD//wIABAAAAAEAAAAAAAEABAABAAAAAAAAAAIABAABAAEAAAD//wMABAAAAAAAAAD//wQABAAAAAEAAAAAAAMABAABAAAAAAAAAAQABAABAAEAAAAGAPr/AQAAAAAAAAAGAPv/AQAAAAEAAAAHAPr/AQABAAAAAAAHAPv/AQABAAEAAAACAPv/AgAAAAAAAAACAPz/AgAAAAEAAAADAPv/AgABAAAAAAADAPz/AgABAAEAAAAHAP7/AgAAAAAAABAGAP7/AgABAAAAABAHAP//AgAAAAEAABAGAP//AgABAAEAABADAAAAAwAAAAAAAAADAAEAAwAAAAEAAAAEAAAAAwABAAAAAAAEAAEAAwABAAEAAAAGAAMAAwAAAAAAAAAGAAQAAwAAAAEAAAAHAAMAAwABAAAAAAAHAAQAAwABAAEAAAACAAQAAQAAAAAAAAACAAUAAQAAAAEAAAADAAQAAQABAAAAAAADAAUAAQABAAEAAAAAAAYAAQAAAAAAABD//wYAAQABAAAAABAAAAcAAQAAAAEAABD//wcAAQABAAEAABD8/wYAAwAAAAAAAAD8/wcAAwAAAAEAAAD9/wYAAwABAAAAAAD9/wcAAwABAAEAAAD6/wQAAAAAAAAAAAD6/wUAAAAAAAEAAAD7/wQAAAABAAAAAAD7/wUAAAABAAEAAAD9/wMAAAAAAAAAAAD9/wQAAAAAAAEAAAD+/wMAAAABAAAAAAD+/wQAAAABAAEAAAD6/wEAAAAAAAAAAAD6/wIAAAAAAAEAAAD7/wEAAAABAAAAAAD7/wIAAAABAAEAAAD9////AgAAAAAAAAD9/wAAAgAAAAEAAAD+////AgABAAAAAAD+/wAAAgABAAEAAAD5//3/AQAAAAAAAAD5//7/AQAAAAEAAAD6//3/AQABAAAAAAD6//7/AQABAAEAAAD9//v/AQAAAAAAAAD9//z/AQAAAAEAAAD+//v/AQABAAAAAAD+//z/AQABAAEAAAA=")
-tile_set = SubResource("TileSet_nsi7s")
+tile_set = ExtResource("1_4vc37")
+collision_visibility_mode = 1
