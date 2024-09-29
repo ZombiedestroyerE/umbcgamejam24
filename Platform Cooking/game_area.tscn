@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://s0r8oer47j70"]
+[gd_scene load_steps=52 format=3 uid="uid://s0r8oer47j70"]
 
 [ext_resource type="Script" path="res://game_area.gd" id="1_byvhs"]
 [ext_resource type="Theme" uid="uid://dj1oj2tmlsr64" path="res://Themes/pizzaButton.tres" id="2_1e1ju"]
@@ -11,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dxc3q63qi3kvr" path="res://dough_section.tscn" id="8_ki18p"]
 [ext_resource type="Texture2D" uid="uid://djdqns5nn8rtr" path="res://Art/Pizza_Gus/Pizza Gus Neutral.png" id="8_o7skl"]
 [ext_resource type="Texture2D" uid="uid://8b28eakwk11r" path="res://Art/Pizza_Gus/Pizza Gus Left Run.png" id="9_6vp13"]
+[ext_resource type="Texture2D" uid="uid://ckq43tcjsy7qn" path="res://Art/Pizza_Gus/Pizza Gus Falling.png" id="10_jd153"]
 [ext_resource type="Texture2D" uid="uid://7c2n5rset5s4" path="res://Art/UI/Sprite-ePress.png" id="10_jndg0"]
+[ext_resource type="Texture2D" uid="uid://mhm2kh5y3ngc" path="res://Art/Pizza_Gus/Pizza Gus Jumping.png" id="12_8lxbx"]
 [ext_resource type="Texture2D" uid="uid://permciojhq83" path="res://Art/Enemys/Spike.png" id="13_byhpv"]
 [ext_resource type="PackedScene" uid="uid://d0ai6tvfdxkfx" path="res://tomato_section.tscn" id="14_tklev"]
 
@@ -158,6 +160,18 @@ size = Vector2(1024, 45)
 radius = 7.0
 height = 26.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_832eu"]
+atlas = ExtResource("12_8lxbx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjoqu"]
+atlas = ExtResource("12_8lxbx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjps2"]
+atlas = ExtResource("12_8lxbx")
+region = Rect2(0, 32, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4366s"]
 atlas = ExtResource("9_6vp13")
 region = Rect2(0, 0, 32, 32)
@@ -178,10 +192,32 @@ region = Rect2(32, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_jd153")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("8_o7skl")
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_832eu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjoqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjps2")
+}],
+"loop": true,
+"name": &"jump",
 "speed": 5.0
 }, {
 "frames": [{
@@ -286,10 +322,70 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_slevk"]
+resource_name = "jump"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_qajyc"]
+resource_name = "fall"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fall"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tta15"]
 _data = {
 "RESET": SubResource("Animation_iu00m"),
+"fall": SubResource("Animation_qajyc"),
 "idle": SubResource("Animation_ee5uj"),
+"jump": SubResource("Animation_slevk"),
 "run": SubResource("Animation_ab02j")
 }
 
@@ -486,6 +582,7 @@ sprite_frames = SubResource("SpriteFrames_ukam8")
 animation = &"e"
 
 [node name="Camera2D" type="Camera2D" parent="Gus"]
+zoom = Vector2(0.5, 0.5)
 
 [node name="kitchenArea" type="Node2D" parent="."]
 
@@ -533,7 +630,7 @@ position = Vector2(1.26087, 8.85185)
 shape = SubResource("RectangleShape2D_e2vep")
 
 [node name="tomato" parent="." instance=ExtResource("14_tklev")]
-position = Vector2(72, 108)
+position = Vector2(209, 20)
 scale = Vector2(10, 10)
 
 [connection signal="pressed" from="UI/startWork" to="." method="_on_start_work_pressed"]
