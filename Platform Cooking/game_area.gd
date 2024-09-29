@@ -35,6 +35,8 @@ var drawTextSpeed = 1
 var chatterLimit = 100
 
 var start = false
+
+var playerMove = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dialogBox.text = ""
@@ -53,6 +55,10 @@ func _process(delta):
 		dialogBox.visible_characters = 0
 	dialogBox.text = "What are you doing sleeping on the job?? Get back to work!!! You have 3 minutes to serve 6 orders!!!"
 	_show_chatter()
+	if !playerMove:
+		gus.set_physics_process(false)
+	else: 
+		gus.set_physics_process(true)
 	
 	if toggleOven and Input.is_action_pressed("e"):
 		pass
@@ -97,6 +103,7 @@ func _on_start_work_pressed():
 	sratButton.visible = false
 	dialogBox.visible = false
 	nameChar.visible = false
+	playerMove = true
 
 
 func _on_oven_body_entered(body):

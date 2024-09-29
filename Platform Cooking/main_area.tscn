@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=4 uid="uid://kflh7gbqjwvd"]
+[gd_scene load_steps=3 format=4 uid="uid://cn5tmpps78b6q"]
 
-[ext_resource type="TileSet" uid="uid://dqg10js5l6360" path="res://Art/Tiles/Tileset.tres" id="1_bxbip"]
+[ext_resource type="TileSet" uid="uid://crbvywnx0yo3g" path="res://Art/Tiles/Tileset.tres" id="1_bxbip"]
 [ext_resource type="Texture2D" uid="uid://c557wrru5pbck" path="res://Art/Tiles/Tomato Sauce Pot.png" id="2_uuny6"]
 
 [node name="main area" type="Node2D"]
