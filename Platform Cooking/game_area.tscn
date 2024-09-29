@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://s0r8oer47j70"]
+[gd_scene load_steps=39 format=3 uid="uid://s0r8oer47j70"]
 
 [ext_resource type="Script" path="res://game_area.gd" id="1_byvhs"]
 [ext_resource type="Theme" uid="uid://dj1oj2tmlsr64" path="res://Themes/pizzaButton.tres" id="2_1e1ju"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d3xms6dgmfe3h" path="res://Art/UI/foodUI/Sprite-uiCheese.png" id="4_rl0f5"]
 [ext_resource type="Texture2D" uid="uid://bclsg56tfrg2g" path="res://Art/UI/foodUI/Sprite-uiDough.png" id="5_sfasx"]
 [ext_resource type="Script" path="res://gustavo.gd" id="7_6hdu4"]
+[ext_resource type="PackedScene" uid="uid://dxc3q63qi3kvr" path="res://dough_section.tscn" id="8_ki18p"]
 [ext_resource type="Texture2D" uid="uid://djdqns5nn8rtr" path="res://Art/Pizza_Gus/Pizza Gus Neutral.png" id="8_o7skl"]
 [ext_resource type="Texture2D" uid="uid://8b28eakwk11r" path="res://Art/Pizza_Gus/Pizza Gus Left Run.png" id="9_6vp13"]
 [ext_resource type="Texture2D" uid="uid://7c2n5rset5s4" path="res://Art/UI/Sprite-ePress.png" id="10_jndg0"]
@@ -393,6 +394,7 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("2_x8g3n")
 theme_override_font_sizes/font_size = 40
 text = "Time: "
+metadata/_edit_use_anchors_ = true
 
 [node name="heldItem" type="Label" parent="UI"]
 offset_left = 8.0
@@ -402,6 +404,7 @@ offset_bottom = 96.0
 theme_override_fonts/font = ExtResource("2_x8g3n")
 theme_override_font_sizes/font_size = 30
 text = "Held item"
+metadata/_edit_use_anchors_ = true
 
 [node name="itemPanel" type="Panel" parent="UI"]
 offset_left = 8.0
@@ -429,6 +432,10 @@ offset_top = 424.0
 offset_right = 1088.0
 offset_bottom = 464.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_v1xtm")
+
+[node name="Dough Section" parent="level" instance=ExtResource("8_ki18p")]
+position = Vector2(-1579, 1659)
+scale = Vector2(10, 10)
 
 [node name="Gus" type="CharacterBody2D" parent="."]
 position = Vector2(568, 328)
