@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=4 uid="uid://dxc3q63qi3kvr"]
 
-[ext_resource type="TileSet" uid="uid://dn6jb2wvfpn0s" path="res://Art/Tiles/dough_section.tres" id="1_4vc37"]
+[ext_resource type="TileSet" uid="uid://bd06d6yciu30" path="res://Art/Tiles/dough_section.tres" id="1_4vc37"]
 
 [node name="Dough Section" type="Node2D"]
 

@@ -151,4 +151,9 @@ func _on_garbage_body_exited(body):
 func _on_killzone_body_entered(body):
 	if body.name == "Gus":
 		gus.global_position = Vector2(550,0)
-		eGus.visible = true
+		
+
+
+func _on_killzone_spike_body_entered(body):
+	if body.name == "Gus":
+		gus.global_position = Vector2(550,0)
