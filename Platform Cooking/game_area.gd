@@ -11,6 +11,11 @@ extends Node2D
 
 @onready var itemPanel = $UI/itemPanel/AnimatedSprite2D
 
+@onready var doughPile = $level/doughPile
+@onready var tomPile = $level/tomatoPile
+@onready var cheesePile = $level/cheesePile
+@onready var pepPile = $level/pepperoniPile
+
 
 @onready var gus = $Gus
 @onready var eGus = $Gus/e
@@ -39,6 +44,11 @@ var start = false
 var playerMove = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	doughPile.play("idle")
+	tomPile.play("idle")
+	cheesePile.play("idle")
+	pepPile.play("idle")
+	
 	dialogBox.text = ""
 	fadeinPanel.visible = true
 	fadeInAnim.play("fadeIn")
