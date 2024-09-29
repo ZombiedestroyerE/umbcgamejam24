@@ -734,18 +734,26 @@ offset_bottom = 464.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_v1xtm")
 
 [node name="doughPile" type="AnimatedSprite2D" parent="level"]
+position = Vector2(-1600, 872)
+scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_bh5xv")
 animation = &"idle"
 
 [node name="tomatoPile" type="AnimatedSprite2D" parent="level"]
+position = Vector2(-1392, -1712)
+scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_1yvcd")
 animation = &"idle"
 
 [node name="cheesePile" type="AnimatedSprite2D" parent="level"]
+position = Vector2(5392, -2088)
+scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_jw15p")
 animation = &"idle"
 
 [node name="pepperoniPile" type="AnimatedSprite2D" parent="level"]
+position = Vector2(3208, 4184)
+scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_3311m")
 
 [node name="kitchenArea" type="Node2D" parent="."]
@@ -797,6 +805,7 @@ metadata/_edit_lock_ = true
 [node name="tomato" parent="." instance=ExtResource("14_tklev")]
 position = Vector2(208, 14)
 scale = Vector2(10, 10)
+metadata/_edit_lock_ = true
 
 [node name="peprroni section" parent="." instance=ExtResource("18_nxdom")]
 position = Vector2(1713, 119)
@@ -815,6 +824,7 @@ shape = SubResource("RectangleShape2D_4aarg")
 [node name="Dough Section" parent="." instance=ExtResource("8_ki18p")]
 position = Vector2(-1285, 1643)
 scale = Vector2(10, 10)
+metadata/_edit_lock_ = true
 
 [node name="killzone_horizon" type="Area2D" parent="."]
 
