@@ -691,7 +691,7 @@ scale = Vector2(10, 10)
 [node name="killzone_horizon" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone_horizon"]
-position = Vector2(-1250, 127.5)
+position = Vector2(-1250, 95)
 shape = SubResource("RectangleShape2D_n026t")
 
 [node name="Spike2" type="AnimatedSprite2D" parent="."]
