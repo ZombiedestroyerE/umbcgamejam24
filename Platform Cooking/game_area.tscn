@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://s0r8oer47j70"]
+[gd_scene load_steps=54 format=3 uid="uid://s0r8oer47j70"]
 
 [ext_resource type="Script" path="res://game_area.gd" id="1_byvhs"]
 [ext_resource type="Theme" uid="uid://dj1oj2tmlsr64" path="res://Themes/pizzaButton.tres" id="2_1e1ju"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://permciojhq83" path="res://Art/Enemys/Spike.png" id="13_byhpv"]
 [ext_resource type="PackedScene" uid="uid://d0ai6tvfdxkfx" path="res://tomato_section.tscn" id="14_tklev"]
 [ext_resource type="PackedScene" uid="uid://bnr6xnd6ujork" path="res://pepperoni_section.tscn" id="18_nxdom"]
+[ext_resource type="PackedScene" uid="uid://bgrt45vbnk3ub" path="res://cheese_section.tscn" id="18_qcl7b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gh64l"]
 radius = 7.0
@@ -636,6 +637,10 @@ scale = Vector2(10, 10)
 
 [node name="peprroni section" parent="." instance=ExtResource("18_nxdom")]
 position = Vector2(1713, 119)
+scale = Vector2(10, 10)
+
+[node name="cheese section" parent="." instance=ExtResource("18_qcl7b")]
+position = Vector2(1290, 956)
 scale = Vector2(10, 10)
 
 [connection signal="pressed" from="UI/startWork" to="." method="_on_start_work_pressed"]
