@@ -1,13 +1,31 @@
-[gd_scene load_steps=18 format=3 uid="uid://dkt4xfj26ay1a"]
+[gd_scene load_steps=26 format=3 uid="uid://dkt4xfj26ay1a"]
 
 [ext_resource type="Script" path="res://gustavo.gd" id="1_y2cle"]
 [ext_resource type="Texture2D" uid="uid://djdqns5nn8rtr" path="res://Art/Pizza_Gus/Pizza Gus Neutral.png" id="2_5enu5"]
+[ext_resource type="Texture2D" uid="uid://ckq43tcjsy7qn" path="res://Art/Pizza_Gus/Pizza Gus Falling.png" id="2_tfgs8"]
 [ext_resource type="Texture2D" uid="uid://8b28eakwk11r" path="res://Art/Pizza_Gus/Pizza Gus Left Run.png" id="3_5ri6m"]
+[ext_resource type="Texture2D" uid="uid://mhm2kh5y3ngc" path="res://Art/Pizza_Gus/Pizza Gus Jumping.png" id="3_jfrwr"]
 [ext_resource type="Texture2D" uid="uid://7c2n5rset5s4" path="res://Art/UI/Sprite-ePress.png" id="4_tuvgp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gh64l"]
 radius = 7.0
 height = 26.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p30p"]
+atlas = ExtResource("2_tfgs8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xco6"]
+atlas = ExtResource("3_jfrwr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oofy2"]
+atlas = ExtResource("3_jfrwr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg7iq"]
+atlas = ExtResource("3_jfrwr")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4366s"]
 atlas = ExtResource("3_5ri6m")
@@ -29,10 +47,32 @@ region = Rect2(32, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5p30p")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_5enu5")
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xco6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oofy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yg7iq")
+}],
+"loop": true,
+"name": &"jump",
 "speed": 5.0
 }, {
 "frames": [{
@@ -137,10 +177,70 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_xhsy7"]
+resource_name = "jump"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_1qa8r"]
+resource_name = "fall"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fall"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tta15"]
 _data = {
 "RESET": SubResource("Animation_iu00m"),
+"fall": SubResource("Animation_1qa8r"),
 "idle": SubResource("Animation_ee5uj"),
+"jump": SubResource("Animation_xhsy7"),
 "run": SubResource("Animation_ab02j")
 }
 
