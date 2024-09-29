@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://s0r8oer47j70"]
+[gd_scene load_steps=79 format=3 uid="uid://s0r8oer47j70"]
 
 [ext_resource type="Script" path="res://game_area.gd" id="1_byvhs"]
 [ext_resource type="Theme" uid="uid://dj1oj2tmlsr64" path="res://Themes/pizzaButton.tres" id="2_1e1ju"]
@@ -15,9 +15,13 @@
 [ext_resource type="Texture2D" uid="uid://7c2n5rset5s4" path="res://Art/UI/Sprite-ePress.png" id="10_jndg0"]
 [ext_resource type="Texture2D" uid="uid://mhm2kh5y3ngc" path="res://Art/Pizza_Gus/Pizza Gus Jumping.png" id="12_8lxbx"]
 [ext_resource type="Texture2D" uid="uid://permciojhq83" path="res://Art/Enemys/Spike.png" id="13_byhpv"]
+[ext_resource type="Texture2D" uid="uid://b7dtyhy0opvne" path="res://Art/Tiles/Sprite-doughPile.png" id="14_jmq6u"]
 [ext_resource type="PackedScene" uid="uid://d0ai6tvfdxkfx" path="res://tomato_section.tscn" id="14_tklev"]
-[ext_resource type="PackedScene" uid="uid://bnr6xnd6ujork" path="res://pepperoni_section.tscn" id="18_nxdom"]
-[ext_resource type="PackedScene" uid="uid://bgrt45vbnk3ub" path="res://cheese_section.tscn" id="18_qcl7b"]
+[ext_resource type="Texture2D" uid="uid://c4yb2m378mqvi" path="res://Art/Tiles/Sprite-tomatoPile.png" id="15_w20fl"]
+[ext_resource type="Texture2D" uid="uid://dsccfbp5wky0m" path="res://Art/Tiles/Sprite-cheesePile.png" id="16_bx5de"]
+[ext_resource type="Texture2D" uid="uid://d1b3smrkoh8wd" path="res://Art/Tiles/Sprite-pepperoniPile.png" id="17_uscwj"]
+[ext_resource type="PackedScene" path="res://pepperoni_section.tscn" id="18_nxdom"]
+[ext_resource type="PackedScene" path="res://cheese_section.tscn" id="18_qcl7b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gh64l"]
 radius = 7.0
@@ -413,6 +417,150 @@ size = Vector2(1024, 45)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1xtm"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6y3c"]
+atlas = ExtResource("14_jmq6u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tie51"]
+atlas = ExtResource("14_jmq6u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2ya0"]
+atlas = ExtResource("14_jmq6u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sovsm"]
+atlas = ExtResource("14_jmq6u")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bh5xv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6y3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tie51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2ya0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sovsm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flvwb"]
+atlas = ExtResource("15_w20fl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi8y7"]
+atlas = ExtResource("15_w20fl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4iwn"]
+atlas = ExtResource("15_w20fl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a3qv"]
+atlas = ExtResource("15_w20fl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1yvcd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flvwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi8y7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4iwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a3qv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ow13"]
+atlas = ExtResource("16_bx5de")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2ukh"]
+atlas = ExtResource("16_bx5de")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfr0w"]
+atlas = ExtResource("16_bx5de")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1bfd"]
+atlas = ExtResource("16_bx5de")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jw15p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ow13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2ukh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfr0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1bfd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe1nj"]
+atlas = ExtResource("17_uscwj")
+region = Rect2(0, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbnpn"]
+atlas = ExtResource("17_uscwj")
+region = Rect2(40, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldxm2"]
+atlas = ExtResource("17_uscwj")
+region = Rect2(80, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjy86"]
+atlas = ExtResource("17_uscwj")
+region = Rect2(120, 0, 40, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3311m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe1nj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbnpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldxm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjy86")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1lol"]
 size = Vector2(138, 106)
 
@@ -447,7 +595,7 @@ animations = [{
 size = Vector2(19.7391, 15.6852)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n026t"]
-size = Vector2(2092, 351)
+size = Vector2(2104, 208.5)
 
 [node name="gameArea" type="Node2D"]
 script = ExtResource("1_byvhs")
@@ -585,6 +733,21 @@ offset_right = 1088.0
 offset_bottom = 464.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_v1xtm")
 
+[node name="doughPile" type="AnimatedSprite2D" parent="level"]
+sprite_frames = SubResource("SpriteFrames_bh5xv")
+animation = &"idle"
+
+[node name="tomatoPile" type="AnimatedSprite2D" parent="level"]
+sprite_frames = SubResource("SpriteFrames_1yvcd")
+animation = &"idle"
+
+[node name="cheesePile" type="AnimatedSprite2D" parent="level"]
+sprite_frames = SubResource("SpriteFrames_jw15p")
+animation = &"idle"
+
+[node name="pepperoniPile" type="AnimatedSprite2D" parent="level"]
+sprite_frames = SubResource("SpriteFrames_3311m")
+
 [node name="kitchenArea" type="Node2D" parent="."]
 
 [node name="oven" type="Area2D" parent="kitchenArea"]
@@ -656,7 +819,7 @@ scale = Vector2(10, 10)
 [node name="killzone_horizon" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone_horizon"]
-position = Vector2(-1250, 95)
+position = Vector2(-1244, 23.75)
 shape = SubResource("RectangleShape2D_n026t")
 
 [node name="Spike2" type="AnimatedSprite2D" parent="."]
