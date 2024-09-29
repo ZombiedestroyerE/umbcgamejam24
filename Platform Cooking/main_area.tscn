@@ -9,7 +9,26 @@
 tile_map_data = PackedByteArray("AAD//wAABQAAAAEAAAAAAP//BQABAAAAAAAAAAAABQABAAEAAAABAP//BQAAAAAAAAABAAAABQAAAAEAAAACAP//BQABAAAAAAACAAAABQABAAEAAAADAAAABQAAAAEAAAD9////BQAAAAAAAAD9/wAABQAAAAEAAAD+////BQABAAAAAAD+/wAABQABAAEAAAD/////BQAAAAAAAAADAP//BQAAAAAAAAA=")
 tile_set = ExtResource("1_bxbip")
 
+<<<<<<< Updated upstream
+=======
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(34, -10)
+scale = Vector2(0.53125, 0.53125)
+texture = ExtResource("2_ot2kp")
+
+>>>>>>> Stashed changes
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(51, -11)
 scale = Vector2(0.625, 0.625)
 texture = ExtResource("2_uuny6")
+<<<<<<< Updated upstream
+=======
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-4, -11)
+scale = Vector2(0.6875, 0.6875)
+texture = ExtResource("3_nlak8")
+>>>>>>> Stashed changes
