@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://s0r8oer47j70"]
+[gd_scene load_steps=53 format=3 uid="uid://s0r8oer47j70"]
 
 [ext_resource type="Script" path="res://game_area.gd" id="1_byvhs"]
 [ext_resource type="Theme" uid="uid://dj1oj2tmlsr64" path="res://Themes/pizzaButton.tres" id="2_1e1ju"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d3xms6dgmfe3h" path="res://Art/UI/foodUI/Sprite-uiCheese.png" id="4_rl0f5"]
 [ext_resource type="Texture2D" uid="uid://bclsg56tfrg2g" path="res://Art/UI/foodUI/Sprite-uiDough.png" id="5_sfasx"]
 [ext_resource type="Script" path="res://gustavo.gd" id="7_6hdu4"]
+[ext_resource type="Texture2D" uid="uid://motokilp4vv1" path="res://Art/UI/foodUI/Sprite-uiSause.png" id="7_ygs6u"]
 [ext_resource type="PackedScene" uid="uid://dxc3q63qi3kvr" path="res://dough_section.tscn" id="8_ki18p"]
 [ext_resource type="Texture2D" uid="uid://djdqns5nn8rtr" path="res://Art/Pizza_Gus/Pizza Gus Neutral.png" id="8_o7skl"]
 [ext_resource type="Texture2D" uid="uid://8b28eakwk11r" path="res://Art/Pizza_Gus/Pizza Gus Left Run.png" id="9_6vp13"]
@@ -140,6 +141,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ygs6u")
+}],
+"loop": true,
+"name": &"sause",
 "speed": 5.0
 }, {
 "frames": [{
@@ -535,7 +544,7 @@ offset_bottom = 224.0
 position = Vector2(68, 64)
 scale = Vector2(4.25, 4)
 sprite_frames = SubResource("SpriteFrames_08y6k")
-animation = &"none"
+animation = &"sause"
 
 [node name="level" type="Node2D" parent="."]
 
