@@ -628,7 +628,6 @@ sprite_frames = SubResource("SpriteFrames_tx3vu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike/killzone_spike"]
 position = Vector2(-0.231876, 10.5093)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_e2vep")
 metadata/_edit_lock_ = true
 
@@ -657,7 +656,7 @@ scale = Vector2(10, 10)
 [node name="killzone_horizon" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone_horizon"]
-position = Vector2(-1250, 127.5)
+position = Vector2(-1250, 95)
 shape = SubResource("RectangleShape2D_n026t")
 
 [node name="Spike2" type="AnimatedSprite2D" parent="."]
@@ -669,7 +668,6 @@ sprite_frames = SubResource("SpriteFrames_tx3vu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike2/killzone_spike"]
 position = Vector2(-0.231876, 10.5093)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_e2vep")
 metadata/_edit_lock_ = true
 
