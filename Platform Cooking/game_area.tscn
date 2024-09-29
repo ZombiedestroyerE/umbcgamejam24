@@ -20,8 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://c4yb2m378mqvi" path="res://Art/Tiles/Sprite-tomatoPile.png" id="15_w20fl"]
 [ext_resource type="Texture2D" uid="uid://dsccfbp5wky0m" path="res://Art/Tiles/Sprite-cheesePile.png" id="16_bx5de"]
 [ext_resource type="Texture2D" uid="uid://d1b3smrkoh8wd" path="res://Art/Tiles/Sprite-pepperoniPile.png" id="17_uscwj"]
-[ext_resource type="PackedScene" path="res://pepperoni_section.tscn" id="18_nxdom"]
-[ext_resource type="PackedScene" path="res://cheese_section.tscn" id="18_qcl7b"]
+[ext_resource type="PackedScene" uid="uid://bnr6xnd6ujork" path="res://pepperoni_section.tscn" id="18_nxdom"]
+[ext_resource type="PackedScene" uid="uid://bgrt45vbnk3ub" path="res://cheese_section.tscn" id="18_qcl7b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gh64l"]
 radius = 7.0
@@ -557,7 +557,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_xjy86")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -595,7 +595,7 @@ animations = [{
 size = Vector2(19.7391, 15.6852)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n026t"]
-size = Vector2(2104, 208.5)
+size = Vector2(1761, 208.5)
 
 [node name="gameArea" type="Node2D"]
 script = ExtResource("1_byvhs")
@@ -755,6 +755,7 @@ animation = &"idle"
 position = Vector2(3208, 4184)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_3311m")
+animation = &"idle"
 
 [node name="kitchenArea" type="Node2D" parent="."]
 
@@ -829,7 +830,7 @@ metadata/_edit_lock_ = true
 [node name="killzone_horizon" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone_horizon"]
-position = Vector2(-1244, 23.75)
+position = Vector2(-2018, 407)
 shape = SubResource("RectangleShape2D_n026t")
 
 [node name="Spike2" type="AnimatedSprite2D" parent="."]
@@ -847,7 +848,7 @@ metadata/_edit_lock_ = true
 [node name="killzone_horizon2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone_horizon2"]
-position = Vector2(2418, 352)
+position = Vector2(2631, 155)
 shape = SubResource("RectangleShape2D_n026t")
 
 [connection signal="pressed" from="UI/startWork" to="." method="_on_start_work_pressed"]
