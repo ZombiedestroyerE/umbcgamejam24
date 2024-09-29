@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci4pw81gqlwfv"]
+
+[ext_resource type="Texture2D" uid="uid://bvkx5ushyuqf0" path="res://Art/Enemys/Sprite-sludgeBob.png" id="1_c4ugm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb8vq"]
+atlas = ExtResource("1_c4ugm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpltw"]
+atlas = ExtResource("1_c4ugm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdllb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb8vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpltw")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="sludge_bob" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(117, 52)
+sprite_frames = SubResource("SpriteFrames_kdllb")
+animation = &"move"
+frame_progress = 0.527239
