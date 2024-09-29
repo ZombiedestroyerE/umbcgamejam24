@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=54 format=3 uid="uid://s0r8oer47j70"]
+=======
+[gd_scene load_steps=45 format=3 uid="uid://s0r8oer47j70"]
+>>>>>>> 9169f7dbce163966acfaaa4cc9f7286c79cee6ab
 
 [ext_resource type="Script" path="res://game_area.gd" id="1_byvhs"]
 [ext_resource type="Theme" uid="uid://dj1oj2tmlsr64" path="res://Themes/pizzaButton.tres" id="2_1e1ju"]
@@ -11,7 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://dxc3q63qi3kvr" path="res://dough_section.tscn" id="8_ki18p"]
 [ext_resource type="Texture2D" uid="uid://djdqns5nn8rtr" path="res://Art/Pizza_Gus/Pizza Gus Neutral.png" id="8_o7skl"]
 [ext_resource type="Texture2D" uid="uid://8b28eakwk11r" path="res://Art/Pizza_Gus/Pizza Gus Left Run.png" id="9_6vp13"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://ckq43tcjsy7qn" path="res://Art/Pizza_Gus/Pizza Gus Falling.png" id="10_06b6g"]
+=======
+[ext_resource type="PackedScene" uid="uid://kflh7gbqjwvd" path="res://main_area.tscn" id="9_34ixj"]
+>>>>>>> 9169f7dbce163966acfaaa4cc9f7286c79cee6ab
 [ext_resource type="Texture2D" uid="uid://7c2n5rset5s4" path="res://Art/UI/Sprite-ePress.png" id="10_jndg0"]
 [ext_resource type="Texture2D" uid="uid://mhm2kh5y3ngc" path="res://Art/Pizza_Gus/Pizza Gus Jumping.png" id="12_4n1yd"]
 [ext_resource type="Texture2D" uid="uid://permciojhq83" path="res://Art/Enemys/Spike.png" id="13_byhpv"]
@@ -550,7 +558,15 @@ scale = Vector2(4.25, 4)
 sprite_frames = SubResource("SpriteFrames_08y6k")
 animation = &"none"
 
+[node name="Dough Section" parent="." instance=ExtResource("8_ki18p")]
+position = Vector2(-1177, 1405)
+scale = Vector2(10, 10)
+
+[node name="main area" parent="Dough Section" instance=ExtResource("9_34ixj")]
+position = Vector2(166.7, -97.6)
+
 [node name="level" type="Node2D" parent="."]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="level"]
 
@@ -564,10 +580,6 @@ offset_top = 424.0
 offset_right = 1088.0
 offset_bottom = 464.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_v1xtm")
-
-[node name="Dough Section" parent="level" instance=ExtResource("8_ki18p")]
-position = Vector2(-1177, 1405)
-scale = Vector2(10, 10)
 
 [node name="Gus" type="CharacterBody2D" parent="."]
 position = Vector2(568, 328)
