@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=4 uid="uid://kflh7gbqjwvd"]
+
+[ext_resource type="TileSet" uid="uid://dqg10js5l6360" path="res://Art/Tiles/Tileset.tres" id="1_bxbip"]
+[ext_resource type="Texture2D" uid="uid://c557wrru5pbck" path="res://Art/Tiles/Tomato Sauce Pot.png" id="2_uuny6"]
+
+[node name="main area" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAABQAAAAEAAAAAAP//BQABAAAAAAAAAAAABQABAAEAAAABAP//BQAAAAAAAAABAAAABQAAAAEAAAACAP//BQABAAAAAAACAAAABQABAAEAAAADAAAABQAAAAEAAAD9////BQAAAAAAAAD9/wAABQAAAAEAAAD+////BQABAAAAAAD+/wAABQABAAEAAAD/////BQAAAAAAAAADAP//BQAAAAAAAAA=")
+tile_set = ExtResource("1_bxbip")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(51, -11)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("2_uuny6")
